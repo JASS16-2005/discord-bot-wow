@@ -1,22 +1,12 @@
 {
-  "name": "bot-discord-bienvenida",
+  "name": "discord-bot-wow",
   "version": "1.0.0",
-  "description": "Bot de Discord con bienvenidas y autorol",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js"
+    "start": "node index.js"
   },
-  "keywords": [
-    "discord",
-    "bot",
-    "bienvenida",
-    "autorol"
-  ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.25.1",
-    "dotenv": "^16.6.1"
+    "discord.js": "^14.14.0",
+    "dotenv": "^16.3.1"
   }
 }
