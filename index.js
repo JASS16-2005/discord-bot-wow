@@ -15,7 +15,7 @@ const client = new Client({
 client.on(Events.ClientReady, () => {
   console.log(`✅ Bot conectado como ${client.user.tag}`);
   console.log(`📊 Sirviendo a ${client.guilds.cache.size} servidor(es)`);
-  client.user.setActivity('!help para más info', { type: 'WATCHING' });
+  client.user.setActivity('Legítimo WoW | !help', { type: 'WATCHING' });
 });
 
 // Evento: Nuevo miembro se une
@@ -81,14 +81,18 @@ client.on(Events.MessageCreate, async (message) => {
     if (command === 'help') {
       const embed = new EmbedBuilder()
         .setTitle('📋 Comandos disponibles')
-        .setDescription('Lista de comandos del bot')
-        .setColor('#0099ff')
+        .setDescription('**Soy el asistente oficial de Legítimo WoW.**\n\nMantengo el orden, guío a los aventureros y te ayudo a navegar todo lo relacionado con el servidor. ¡Por la Horda… o la Alianza, tú decides!')
+        .setColor('#7B3FF2')
+        .setThumbnail('https://i.imgur.com/gMZndEc.png')
         .addFields(
+          { name: '⚔️ Comandos', value: '━━━━━━━━━━━━━━━━━━', inline: false },
           { name: '!ping', value: 'Verifica la latencia del bot', inline: false },
           { name: '!help', value: 'Muestra este mensaje', inline: false },
           { name: '!test', value: 'Testea la bienvenida y autorol (Admin)', inline: false },
-          { name: 'Automático', value: 'El bot asigna automáticamente el rol cuando te unes', inline: false }
-        );
+          { name: '🛡️ Automático', value: 'El bot asigna automáticamente el rol cuando te unes', inline: false }
+        )
+        .setFooter({ text: 'Legítimo WoW - Bot Oficial' })
+        .setTimestamp();
       await message.reply({ embeds: [embed] });
     }
 
